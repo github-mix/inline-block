@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="m-dark-mode m-start-screen" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#3a333a">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2">
+    <title>Demo</title>
+
+    <link rel="preload" href="/assets/font/Unkempt-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="index.css">
+    <script defer src="index.js"></script>
+</head>
+<body>
+<div class="c-start-control">
+    <button id="demoButton" class="c-start-control__button">
+        Click me to see the demo!
+        <noscript>But first, enable JavaScript.</noscript>
+    </button>
+    <label class="c-start-control__label">
+        Theme color
+        <input id="colorPicker" type="color" class="c-start-control__color"/>
+    </label>
+</div>
+
+<div class="c-layout">
+    <header class="c-layout__header">
+        <button data-toggle="leftAside" class="c-layout__menu-button" title="open/close menu">
+            <svg class="c-layout__menu-button-icon">
+                <use href="assets/svg/sprite.svg#icon-menu"></use>
+            </svg>
+        </button>
+        <div class="c-layout__header-box">
+            <svg class="c-icon">
+                <use href="assets/svg/sprite.svg#icon-box"></use>
+            </svg>
+            <h1 class="c-layout__title">HTML-prototype</h1>
+            <button data-toggle="navMenu" class="c-layout__nav-toggle">
+                <svg class="c-icon">
+                    <use href="assets/svg/sprite.svg#icon-plus"></use>
+                </svg>
+                <svg class="c-icon">
+                    <use href="assets/svg/sprite.svg#icon-minus"></use>
+                </svg>
+            </button>
+            <nav id="navMenu" class="c-layout__nav">
+                <a href="#primary" class="c-layout__link m-header">
+                <span class="c-layout__link-text">
+                    <svg class="c-icon">
+                        <use href="assets/svg/sprite.svg#icon-plus"></use>
+                    </svg>
+                    primary
+                </span>
+                </a>
+                <a href="#secondary" class="c-layout__link m-header">
+                <span class="c-layout__link-text">
+                    <svg class="c-icon">
+                        <use href="assets/svg/sprite.svg#icon-minus"></use>
+                    </svg>
+                    secondary
+                </span>
+                </a>
+                <a href="#third" class="c-layout__link m-header">
+                <span class="c-layout__link-text">
+                    <svg class="c-icon">
+                        <use href="assets/svg/sprite.svg#icon-x"></use>
+                    </svg>
+                    third
+                </span>
+                </a>
+                <a href="#fourth" class="c-layout__link m-header">
+                <span class="c-layout__link-text">
+                    <svg class="c-icon">
+                        <use href="assets/svg/sprite.svg#icon-divide"></use>
+                    </svg>
+                    fourth
+                </span>
+                </a>
+            </nav>
+        </div>
+        <button data-toggle="rightAside" class="c-layout__menu-button" title="open/close menu">
+            <svg class="c-layout__menu-button-icon">
+                <use href="assets/svg/sprite.svg#icon-menu"></use>
+            </svg>
+        </button>
+    </header>
+    <aside id="leftAside" hidden class="c-layout__aside m-left">
+        <div class="c-layout__aside-box">
+            <div class="c-layout__aside-title">Left aside</div>
+            <div class="c-layout__aside-links">
+                <a href="#primary" class="c-layout__link m-left-side">
+                    <span class="c-layout__link-text">
+                        <svg class="c-icon">
+                            <use href="assets/svg/sprite.svg#icon-plus"></use>
+                        </svg>
+                        primary
+                    </span>
+                </a>
+                <a href="#secondary" class="c-layout__link m-left-side">
+                    <span class="c-layout__link-text">
+                        <svg class="c-icon">
+                            <use href="assets/svg/sprite.svg#icon-minus"></use>
+                        </svg>
+                        secondary
+                    </span>
+                </a>
+                <a href="#third" class="c-layout__link m-left-side">
+                    <span class="c-layout__link-text">
+                        <svg class="c-icon">
+                            <use href="assets/svg/sprite.svg#icon-x"></use>
+                        </svg>
+                        third
+                    </span>
+                </a>
+                <a href="#fourth" class="c-layout__link m-left-side">
+                    <span class="c-layout__link-text">
+                        <svg class="c-icon">
+                            <use href="assets/svg/sprite.svg#icon-divide"></use>
+                        </svg>
+                        fourth
+                    </span>
+                </a>
+            </div>
+        </div>
+    </aside>
+    <aside id="rightAside" class="c-layout__aside m-right">
+        <div class="c-layout__aside-box">
+            <div class="c-layout__aside-title">Right aside</div>
+            <div class="c-layout__aside-links">
+                <a href="#primary" class="c-layout__link m-right-side">
+                    <span class="c-layout__link-text">
+                        <svg class="c-icon">
+                            <use href="assets/svg/sprite.svg#icon-plus"></use>
+                        </svg>
+                        primary
+                    </span>
+                </a>
+                <a href="#secondary" class="c-layout__link m-right-side">
+                    <span class="c-layout__link-text">
+                        <svg class="c-icon">
+                            <use href="assets/svg/sprite.svg#icon-minus"></use>
+                        </svg>
+                        secondary
+                    </span>
+                </a>
+                <a href="#third" class="c-layout__link m-right-side">
+                    <span class="c-layout__link-text">
+                        <svg class="c-icon">
+                            <use href="assets/svg/sprite.svg#icon-x"></use>
+                        </svg>
+                        third
+                    </span>
+                </a>
+                <a href="#fourth" class="c-layout__link m-right-side">
+                    <span class="c-layout__link-text">
+                        <svg class="c-icon">
+                            <use href="assets/svg/sprite.svg#icon-divide"></use>
+                        </svg>
+                        fourth
+                    </span>
+                </a>
+            </div>
+        </div>
+    </aside>
+    <main id="layoutMain" class="c-layout__main">
+        <h2 id="primary" data-scroll-anim>
+            <svg class="c-icon">
+                <use href="assets/svg/sprite.svg#icon-plus"></use>
+            </svg>
+            <span data-anim-title>Primary</span>
+        </h2>
+        <p data-scroll-anim>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam amet assumenda
+            autem, commodi
+            doloribus ea eius esse et eum eveniet facilis minima, mollitia natus odit ullam veritatis vitae voluptatem?
+        </p>
+        <p data-scroll-anim>Ab adipisci aliquid aperiam beatae delectus dolorem dolorum eius et facere id itaque libero
+            molestiae
+            nostrum, odit officia perspiciatis provident quidem, quisquam ratione repellat rerum similique totam! Alias,
+            expedita, ullam.
+        </p>
+        <p data-scroll-anim>Aliquid beatae dicta dolorum excepturi expedita, facilis itaque libero magni, modi,
+            necessitatibus
+            obcaecati odit officiis sapiente! Beatae consectetur cum explicabo labore, natus necessitatibus quos, rerum
+            sequi similique, temporibus voluptates voluptatibus!
+        </p>
+        <p data-scroll-anim>Blanditiis doloremque explicabo id iusto, laboriosam pariatur porro voluptas! Earum in
+            mollitia, nam
+            perspiciatis quas suscipit. Accusantium blanditiis nesciunt odio! Alias blanditiis cumque deserunt dolorum
+            eligendi iure, obcaecati vero voluptatem.
+        </p>
+        <p data-scroll-anim>A autem cupiditate, ducimus facere nesciunt quaerat voluptatibus! Amet, earum eos numquam
+            quasi quisquam
+            recusandae unde voluptates. Aspernatur aut dolores eveniet illo ipsam laborum laudantium quod voluptatibus?
+            Doloribus, est, ratione?
+        </p>
+
+        <h2 id="secondary" data-scroll-anim>
+            <svg class="c-icon">
+                <use href="assets/svg/sprite.svg#icon-minus"></use>
+            </svg>
+            <span data-anim-title>Secondary</span>
+        </h2>
+        <p data-scroll-anim>Aspernatur eos eveniet maiores natus quae quisquam ratione repellendus veniam? Aliquam cum
+            cumque doloribus
+            et facilis illum maxime molestias, odio praesentium quasi saepe suscipit tempore totam! Est itaque similique
+            temporibus!
+        </p>
+        <p data-scroll-anim>Eius labore laboriosam perferendis sunt ullam voluptatem? Accusantium animi aspernatur atque
+            consequuntur
+            dolorem error eveniet, ipsa itaque iusto magni modi mollitia non odio pariatur quibusdam quisquam sapiente
+            sit, voluptatem voluptatum!
+        </p>
+        <p data-scroll-anim>Aliquam expedita necessitatibus obcaecati. Cupiditate dicta eaque enim eos eveniet itaque
+            laborum maxime
+            molestiae molestias omnis quae quod, reprehenderit rerum sapiente soluta ut voluptatibus. Dolorem provident
+            quidem repellat totam voluptatum.
+        </p>
+        <p data-scroll-anim>Ab doloribus error ipsa iusto unde. Accusamus aliquid autem dolor, doloremque ducimus
+            exercitationem magnam
+            modi mollitia obcaecati quia quis sunt veniam voluptatum! Accusantium fuga labore maiores officiis quam quos
+            voluptatum.
+        </p>
+        <p data-scroll-anim>Dignissimos, doloribus fugiat odit officiis quam sapiente sunt vitae voluptates voluptatum.
+            Accusantium
+            culpa eveniet fugit libero natus nobis perspiciatis praesentium repellendus. Dolores error eveniet facilis
+            pariatur porro recusandae reiciendis temporibus!
+        </p>
+
+        <h2 id="third" data-scroll-anim>
+            <svg class="c-icon">
+                <use href="assets/svg/sprite.svg#icon-x"></use>
+            </svg>
+            <span data-anim-title>Third</span>
+        </h2>
+        <p data-scroll-anim>Adipisci dolore dolores doloribus harum magnam, omnis temporibus vero! Accusamus, aspernatur
+            cum distinctio
+            dolorem ex expedita explicabo fugit illo illum, ipsa, ipsam laboriosam quae quia quisquam ratione tempore
+            ullam voluptatum?
+        </p>
+        <p data-scroll-anim>Delectus eius officia optio. Adipisci autem consectetur consequuntur, cupiditate distinctio
+            doloribus
+            magnam minima obcaecati odio officia, perspiciatis quia tempore totam vitae voluptatibus. Autem doloremque
+            id itaque nulla quis saepe vitae.
+        </p>
+        <p data-scroll-anim>Aliquam architecto magnam veritatis. Aliquid assumenda distinctio eaque, esse fugiat maxime
+            nobis officiis
+            quidem quo repellendus tenetur unde vitae voluptatem. Alias commodi cupiditate eius fugiat modi optio quasi
+            qui, sapiente.
+        </p>
+        <p data-scroll-anim>A amet architecto culpa cum cumque earum impedit iure magnam nostrum officia praesentium
+            quas quasi quis,
+            repellat suscipit, temporibus, veritatis. Aperiam blanditiis dicta dolor iusto libero placeat provident
+            soluta veniam!
+        </p>
+        <p data-scroll-anim>Ad consectetur debitis dolor dolorum, eius eos, eveniet harum hic maiores nam repellendus
+            voluptatibus. A
+            atque consectetur culpa debitis excepturi explicabo harum nemo porro quam quia sit, suscipit temporibus
+            velit.
+        </p>
+
+        <h2 id="fourth" data-scroll-anim>
+            <svg class="c-icon">
+                <use href="assets/svg/sprite.svg#icon-divide"></use>
+            </svg>
+            <span data-anim-title>Fourth</span>
+        </h2>
+        <p data-scroll-anim>Esse est in molestiae mollitia placeat quo vero! Adipisci alias, aliquid commodi
+            consequuntur corporis
+            cupiditate debitis dicta dolorem eligendi esse est id inventore natus officia optio ratione rem rerum
+            voluptatum!
+        </p>
+        <p data-scroll-anim>Ab aspernatur, cumque doloremque dolores fuga fugit in, ipsa iusto, laboriosam libero
+            officia quam
+            recusandae reprehenderit saepe ut vel voluptatem voluptates! Eveniet ipsa sequi tempore temporibus vel vero
+            voluptatem. Omnis.
+        </p>
+        <p data-scroll-anim>A ab commodi delectus dolorum est facere facilis hic id ipsam, iure iusto, laboriosam
+            libero, maiores minus
+            molestiae nam non omnis placeat quibusdam quisquam rem repudiandae sed temporibus ullam veniam.
+        </p>
+        <p data-scroll-anim>Architecto at consequuntur culpa, modi nemo officia quaerat quas quia recusandae sit
+            temporibus vitae!
+            Atque illo molestiae odit pariatur voluptates. Alias consequatur eius expedita illum perferendis soluta
+            tenetur unde voluptas!
+        </p>
+        <p data-scroll-anim>Ab aut deserunt dolor dolorem eos, error, exercitationem id incidunt ipsum maiores minus
+            molestiae neque
+            obcaecati quae quasi quisquam vitae? Accusantium asperiores beatae est illum ipsa nam quidem similique
+            ullam?
+        </p>
+    </main>
+    <footer class="c-layout__footer">
+        <div data-scroll-anim class="c-layout__footer-item m-left">
+            <a href="https://linkedin.com/in/vlad-stasevich-76b835391" target="_blank" class="c-link m-accent-color">my
+                linkedin</a>
+        </div>
+        <div data-scroll-anim class="c-layout__footer-item m-right">
+            This HTML-prototype was created by
+            <img data-scroll-anim src="assets/images/vmix200cut.webp" alt="author photo"/>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
