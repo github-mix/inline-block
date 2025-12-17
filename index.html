@@ -303,5 +303,21 @@
         </div>
     </footer>
 </div>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyAkxjE0qwcww8GddeIhPnfDP3gWdw03WPI",
+        authDomain: "inline-block.firebaseapp.com",
+        projectId: "inline-block",
+        storageBucket: "inline-block.firebasestorage.app",
+        messagingSenderId: "758308957660",
+        appId: "1:758308957660:web:7cfeeb127e740c4bbd7319",
+        measurementId: "G-5Q9Q4KJ6H6"
+    };
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
 </body>
 </html>
