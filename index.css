@@ -60,18 +60,18 @@ noscript {
 @keyframes clip-path-mask {
     0% {
         overflow: visible;
-        height: 100vh;
         clip-path: inset(calc(50% - 40px) calc(50% - 160px));
+        height: 100vh;
     }
     99% {
         overflow: visible;
-        height: 100vh;
         clip-path: inset(0 0 0 0);
+        height: 100vh;
     }
     100% {
         overflow: visible;
-        height: auto;
         clip-path: none;
+        height: auto;
     }
 }
 
@@ -127,50 +127,51 @@ noscript {
 html {
     overflow-x: hidden;
     overflow-y: scroll;
-    scroll-behavior: smooth;
-    background: var(--main-bg);
-    font: var(--main-font);
-    color: var(--dark-text-color);
     transition: background-color var(--delay);
+    background: var(--main-bg);
+    color: var(--dark-text-color);
+    font: var(--main-font);
+    scroll-behavior: smooth;
 
     &.m-dark-mode {
         color: var(--light-text-color);
     }
+
     &:has(.c-start-control__button:hover) {
         background: var(--dark-bg);
     }
 }
 
 body {
-    min-height: 100vh;
     margin: 0;
+    min-height: 100vh;
 }
 
 h2 {
     display: flex;
-    gap: 10px;
     align-items: center;
+    gap: 10px;
     margin: 0.75rem 0;
-    scroll-margin-top: 120px;
     font-size: 1.25rem;
+    scroll-margin-top: 120px;
 
     &.m-in-viewport > .c-icon {
         animation: bounce var(--delay) var(--short-delay) cubic-bezier(.28, .84, .42, 2) 1 forwards;
     }
 
     > .c-icon {
-        height: 50px;
         opacity: 0.7;
+        height: 50px;
     }
 }
 
 p {
-    margin: 0.75rem 0;
-    line-height: 1.2;
-    text-indent: 26px;
     opacity: 0.2;
     transform: translateY(100px);
     transition: transform var(--delay), opacity var(--delay);
+    margin: 0.75rem 0;
+    line-height: 1.2;
+    text-indent: 26px;
 
     &.m-top {
         transform: translateY(-100px);
@@ -196,10 +197,10 @@ button {
 }
 
 .c-link {
-    text-decoration: none;
     color: var(--link-color);
     font: var(--main-font);
     font-size: 1rem;
+    text-decoration: none;
 
     &.m-accent-color {
         color: var(--link-accent-color);
@@ -216,16 +217,16 @@ button {
 }
 
 .c-start-control {
-    z-index: 10;
     position: fixed;
+    z-index: 10;
     top: 50%;
     left: 50%;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    max-width: 80vw;
-    width: max-content;
     translate: -50% -50%;
+    width: max-content;
+    max-width: 80vw;
 
     html.m-start-screen & {
         animation: show-button var(--delay) 1 forwards;
@@ -238,14 +239,14 @@ button {
 
 .c-start-control__button {
     flex-grow: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: clip-path var(--delay), opacity var(--delay);
+    border: 0;
     height: 80px;
     padding: 6px 20px;
     background: linear-gradient(180deg, var(--light-bg), var(--main-bg) 150%);
     color: inherit;
-    border: 0;
     font: var(--main-font);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    transition: clip-path var(--delay), opacity var(--delay);
 
     &:hover {
         clip-path: polygon(2% 0, 100% 0, 98% 100%, 0 100%);
@@ -254,47 +255,49 @@ button {
             transform: skewX(-5deg);
         }
     }
+
     &:focus-visible {
         box-shadow: var(--focus-box-shadow);
     }
 }
 
 .c-start-control__label {
-    z-index: 0;
-    flex-grow: 1;
     position: relative;
+    z-index: 0;
     display: inline-flex;
-    justify-content: center;
+    flex-grow: 1;
     align-items: center;
+    justify-content: center;
     min-height: 80px;
-    cursor: pointer;
     padding: 0 16px;
+    cursor: pointer;
 
     &:has(:focus)::before {
         box-shadow: 0 0 0 2px white, 0 0 0 4px black;
     }
+
     &::before {
         content: "";
-        z-index: -1;
         position: absolute;
+        z-index: -1;
         inset: 0;
+        transition: transform var(--delay);
         border: 4px solid var(--dark-bg);
         background-color: var(--main-bg);
-        transition: transform var(--delay);
     }
 }
 
 .c-start-control__color {
     position: absolute;
-    left: 0;
     bottom: 0;
+    left: 0;
     opacity: 0;
     cursor: inherit;
 }
 
 .c-anim-card {
-    overflow: hidden;
     display: inline-block;
+    overflow: hidden;
     padding: 8px;
     background: var(--dark-bg);
 
@@ -314,17 +317,16 @@ button {
 }
 
 .c-layout {
-    z-index: 0;
     position: relative;
+    z-index: 0;
+    visibility: visible;
     grid-template: auto 1fr / auto 1fr auto;
-    grid-template-areas:
-            "left-aside header right-aside"
+    grid-template-areas: "left-aside header right-aside"
             "left-aside main right-aside"
             "footer footer footer";
     row-gap: var(--main-gap);
     overflow: hidden;
     min-height: 100vh;
-    visibility: visible;
     padding-bottom: var(--main-gap);
     background: var(--main-bg);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%239C92AC' fill-opacity='0.08' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -338,8 +340,8 @@ button {
     }
 
     html.m-start-screen & {
-        height: 100vh;
         visibility: hidden;
+        height: 100vh;
     }
 
     html:not(.m-start-screen) & {
@@ -348,11 +350,11 @@ button {
 }
 
 .c-layout__header {
-    z-index: 2;
-    grid-area: header;
-    display: flex;
-    gap: 10px;
     position: relative;
+    z-index: 2;
+    display: flex;
+    grid-area: header;
+    gap: 10px;
     transition: transform var(--delay);
 
     @media (min-height: 400px) {
@@ -374,9 +376,9 @@ button {
         content: "";
         position: absolute;
         inset: 0 60px;
-        background-color: var(--shadow-bg);
-        translate: var(--shadow-translate);
         clip-path: polygon(1px 0, 100% 0, calc(100% - 2px) 100px, 30px 100px, 0 70px);
+        translate: var(--shadow-translate);
+        background-color: var(--shadow-bg);
         pointer-events: none;
 
         @media (min-width: 768px) {
@@ -395,13 +397,12 @@ button {
 .c-layout__menu-button {
     --scale-x: 1;
     --rotate-y: 0;
-
-    flex-shrink: 0;
     position: relative;
-    height: 60px;
-    width: 50px;
-    padding: 0;
+    flex-shrink: 0;
     border: 0;
+    width: 50px;
+    height: 60px;
+    padding: 0;
     background: none;
 
     @media (min-width: 1280px) {
@@ -411,30 +412,36 @@ button {
     &:focus-visible > .c-layout__menu-button-icon {
         box-shadow: var(--focus-box-shadow);
     }
+
     &:hover {
         &:first-child {
             --scale-x: 0.9;
             --rotate-y: 5deg;
         }
+
         &:last-child {
             --scale-x: 1.2;
             --rotate-y: -5deg;
         }
     }
+
     &:active {
         &:first-child {
             --scale-x: 0.9;
             --rotate-y: 15deg;
         }
+
         &:last-child {
             --scale-x: 1.2;
             --rotate-y: -15deg;
         }
+
         &::before,
         .c-layout__menu-button-icon {
             transition: none;
         }
     }
+
     &:first-child {
         &::before {
             left: -10px;
@@ -445,6 +452,7 @@ button {
             transform-origin: 0 50%;
         }
     }
+
     &:last-child {
         &::before {
             transform-origin: 100% -30%;
@@ -459,40 +467,40 @@ button {
         content: "";
         position: absolute;
         inset: 0;
-        background-color: var(--shadow-bg);
-        translate: var(--shadow-translate);
         transform: var(--perspective) rotateY(var(--rotate-y)) scaleX(var(--scale-x));
+        translate: var(--shadow-translate);
         transition: transform var(--delay);
+        background-color: var(--shadow-bg);
     }
 }
 
 .c-layout__menu-button-icon {
     position: absolute;
     inset: 0;
+    transform: var(--perspective) rotateY(var(--rotate-y));
+    transition: transform var(--delay);
     width: 100%;
     height: 100%;
     padding: 8px;
     background-color: var(--light-bg);
-    transform: var(--perspective) rotateY(var(--rotate-y));
-    transition: transform var(--delay);
 }
 
 .c-layout__header-box {
     position: relative;
     display: flex;
-    align-items: center;
     flex-grow: 1;
+    align-items: center;
     width: 0;
-    padding-left: 16px;
-    min-height: calc(var(--main-gap) * 2);
     max-height: 100px;
+    min-height: calc(var(--main-gap) * 2);
+    padding-left: 16px;
     background-color: var(--light-bg);
 
     @media (min-width: 640px) {
         overflow: hidden;
+        clip-path: polygon(1px 0, 100% 0, calc(100% - 2px) 100px, 30px 100px, 0 70px);
         padding: 0 16px;
         background: none;
-        clip-path: polygon(1px 0, 100% 0, calc(100% - 2px) 100px, 30px 100px, 0 70px);
     }
     @media (min-width: 768px) {
         flex-wrap: wrap;
@@ -504,8 +512,8 @@ button {
 
     > .c-icon {
         flex-shrink: 0;
-        height: 34px;
         margin-right: 16px;
+        height: 34px;
 
         @media (max-width: 767.98px) {
             display: none;
@@ -514,31 +522,35 @@ button {
 }
 
 .c-layout__title {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
     flex-grow: 10000;
-    margin: 0;
     overflow: hidden;
     overflow-wrap: break-word;
-    line-height: 1.1rem;
-    font-weight: 400;
+    margin: 0;
     font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.1rem;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
 
     @media (min-width: 640px) {
-        line-height: 2rem;
-        font-size: 1.25rem;
-        white-space: nowrap;
         overflow: hidden;
+        font-size: 1.25rem;
+        line-height: 2rem;
         text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }
 
 .c-layout__nav-toggle {
-    flex-shrink: 0;
     position: relative;
+    flex-shrink: 0;
     align-self: stretch;
+    border: 0;
     width: 50px;
     padding: 0;
     background: none;
-    border: 0;
 
     @media (min-width: 640px) {
         display: none;
@@ -547,14 +559,17 @@ button {
     &:focus-visible {
         box-shadow: var(--focus-box-shadow);
     }
+
     &:hover > .c-icon {
         &:first-child {
             opacity: 0;
         }
+
         &:last-child {
             opacity: 1;
         }
     }
+
     &:active > .c-icon {
         transform: scale(0.8);
     }
@@ -562,9 +577,9 @@ button {
     > .c-icon {
         position: absolute;
         inset: 0;
-        padding: 8px 8px 0;
         opacity: 1;
         transition: opacity var(--short-delay);
+        padding: 8px 8px 0;
 
         &:last-child {
             opacity: 0;
@@ -573,32 +588,32 @@ button {
 }
 
 .c-layout__nav {
+    position: static;
     z-index: -1;
     display: flex;
-    justify-content: end;
-    align-self: end;
+    flex-direction: row;
     flex-grow: 1;
     flex-shrink: 0;
-    position: static;
-    flex-direction: row;
+    align-self: end;
+    justify-content: end;
     overflow: hidden;
-    max-width: 100%;
-    height: 50px;
-    margin-left: 12px;
     outline: 100vw solid var(--light-bg);
+    margin-left: 12px;
+    height: 50px;
+    max-width: 100%;
 
     @media (max-width: 639.98px) {
-        z-index: -1;
-        flex-direction: column;
         position: absolute;
-        right: 0;
+        z-index: -1;
         bottom: 0;
-        height: auto;
-        max-height: 0;
+        right: 0;
+        flex-direction: column;
         overflow: visible;
-        outline: none;
         translate: 0 80%;
         transition: max-height var(--delay), translate var(--delay);
+        outline: none;
+        height: auto;
+        max-height: 0;
     }
     @media (min-width: 768px) {
         flex-shrink: 1;
@@ -610,17 +625,18 @@ button {
             content: "";
             position: absolute;
             inset: 0;
-            background: var(--shadow-bg);
             translate: 9px 12px;
+            background: var(--shadow-bg);
         }
     }
 
     &.m-open {
         @media (max-width: 639.98px) {
-            max-height: 100vh;
             translate: 0 100%;
+            max-height: 100vh;
         }
     }
+
     &:not(.m-open) {
         @media (max-width: 639.98px) {
             animation: var(--hide-visibility);
@@ -640,26 +656,29 @@ button {
 }
 
 .c-layout__link {
-    display: flex;
     position: relative;
+    display: flex;
     overflow: hidden;
-    text-decoration: none;
     color: var(--dark-bg);
     font: var(--main-font);
     font-size: 1rem;
+    text-decoration: none;
 
     &:hover,
     &:focus-visible {
         .c-layout__link-text {
             transform: var(--perspective) rotateX(-7deg);
         }
+
         .c-icon {
             transform: translateY(10px);
         }
     }
+
     &:not(:hover) .c-icon {
         transition-duration: var(--delay);
     }
+
     &:focus-visible {
         outline: none;
         color: black;
@@ -668,6 +687,7 @@ button {
             color: white;
         }
     }
+
     &:active {
         transition: none;
 
@@ -675,6 +695,7 @@ button {
         .c-icon {
             transition: none;
         }
+
         .c-layout__link-text {
             transform: var(--perspective) rotateX(-13deg);
         }
@@ -694,6 +715,7 @@ button {
                 text-align: left;
             }
         }
+
         .c-icon {
             @media (min-width: 640px) and (max-width: 767.98px) {
                 vertical-align: middle;
@@ -712,6 +734,7 @@ button {
                 color: white;
             }
         }
+
         &:active {
             transition: none;
 
@@ -732,6 +755,7 @@ button {
             .c-layout__link-text {
                 transform: var(--perspective) rotateY(3deg);
             }
+
             .c-icon {
                 transform: translate(5px, 8px) rotate(30deg);
             }
@@ -742,19 +766,21 @@ button {
         }
 
         .c-layout__link-text {
+            transform: var(--perspective) rotateY(1deg);
+            transform-origin: 0 50%;
             margin-right: -10px;
             padding-right: 40px;
             text-align: right;
-            transform-origin: 0 50%;
-            transform: var(--perspective) rotateY(1deg);
         }
     }
+
     &.m-right-side {
         &:hover,
         &:focus-visible {
             .c-layout__link-text {
                 transform: var(--perspective) rotateY(-3deg);
             }
+
             .c-icon {
                 transform: translate(-5px, 8px) rotate(-30deg);
             }
@@ -765,37 +791,37 @@ button {
         }
 
         .c-layout__link-text {
+            transform: var(--perspective) rotateY(-1deg);
+            transform-origin: 100% 50%;
             padding-left: 40px;
             text-align: left;
-            transform-origin: 100% 50%;
-            transform: var(--perspective) rotateY(-1deg);
         }
     }
 }
 
 .c-layout__link-text {
-    flex-grow: 1;
-    display: block;
     position: relative;
+    display: block;
+    flex-grow: 1;
     overflow: hidden;
+    transform: var(--perspective) rotateX(-1deg);
+    transform-origin: 50% 0;
+    transition: transform var(--delay);
+    border-top: 1px dashed var(--light-bg);
     height: 100%;
     padding: 0 12px;
-    border-top: 1px dashed var(--light-bg);
     background-color: var(--light-bg);
     background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.1));
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    text-align: center;
     line-height: 50px;
-    transform-origin: 50% 0;
-    transform: var(--perspective) rotateX(-1deg);
-    transition: transform var(--delay);
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     .c-icon {
-        height: 26px;
         vertical-align: baseline;
         translate: 0 4px;
         transition: transform 2s;
+        height: 26px;
     }
 }
 
@@ -803,16 +829,15 @@ button {
     --vertical-margin: calc(var(--main-gap) * 4);
     --clip-path: none;
     --mask-image: none;
-
-    z-index: 2;
     position: fixed;
+    z-index: 2;
+    top: 82px;
     display: flex;
     flex-direction: column;
-    top: 82px;
     align-self: start;
-    min-height: 300px;
-    max-height: clamp(0px, calc(100vh - var(--vertical-margin) * 2), 2000px);
     transition: transform var(--delay);
+    max-height: clamp(0px, calc(100vh - var(--vertical-margin) * 2), 2000px);
+    min-height: 300px;
 
     @media (min-width: 768px) {
         top: 150px;
@@ -829,23 +854,22 @@ button {
 
     &::before {
         content: "";
-        z-index: -1;
         position: absolute;
+        z-index: -1;
         inset: 0;
-        background-color: var(--shadow-bg);
-        clip-path: var(--clip-path);
         mask-image: var(--mask-image);
+        clip-path: var(--clip-path);
         translate: var(--shadow-translate);
+        background-color: var(--shadow-bg);
     }
 
     &.m-left {
         --clip-path: polygon(0 0, 100% 0, calc(100% - 26px) 2000px, 0 2000px);
         --mask-image: linear-gradient(-45deg, transparent 30px, white 30px);
-
-        grid-area: left-aside;
         left: 0;
-        width: 240px;
         direction: rtl;
+        grid-area: left-aside;
+        width: 240px;
 
         @media (max-width: 1279.98px) {
             transform: translateX(-110%);
@@ -863,9 +887,11 @@ button {
             right: auto;
             border-right-width: 1px;
         }
+
         .c-layout__aside-title {
             padding-right: 40px;
         }
+
         .c-layout__aside-links {
             margin-left: 20px;
         }
@@ -874,9 +900,8 @@ button {
     &.m-right {
         --clip-path: polygon(20px 0, 100% 0, 100% 2000px, -26px 2000px);
         --mask-image: linear-gradient(45deg, transparent 30px, white 30px);
-
-        grid-area: right-aside;
         right: 0;
+        grid-area: right-aside;
         width: 260px;
 
         @media (max-width: 1279.98px) {
@@ -891,9 +916,11 @@ button {
             left: auto;
             border-left-width: 1px;
         }
+
         .c-layout__aside-title {
             padding-left: 50px;
         }
+
         .c-layout__aside-links {
             margin-right: 20px;
         }
@@ -902,6 +929,7 @@ button {
     &.m-open {
         transform: translateX(0);
     }
+
     &:not(.m-open) {
         @media (max-width: 1279.98px) {
             animation: var(--hide-visibility);
@@ -913,17 +941,17 @@ button {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    mask-image: var(--mask-image);
+    clip-path: var(--clip-path);
     height: 100%;
     padding: 0 0 50px;
-    clip-path: var(--clip-path);
-    mask-image: var(--mask-image);
 
     &::after {
         content: "";
         position: absolute;
         inset: 26px 0;
-        width: 20px;
         border: 0 dashed rgba(0, 0, 0, 0.2);
+        width: 20px;
     }
 }
 
@@ -941,13 +969,13 @@ button {
 
 .c-layout__main {
     grid-area: main;
+    transform-origin: 50% 0;
+    transition: transform var(--delay);
     /*overflow: hidden;*/
     margin: 12px 10px 40px;
     padding: 1px 4vw 20px;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     text-align: justify;
-    transition: transform var(--delay);
-    transform-origin: 50% 0;
 
     @media (min-width: 768px) {
         margin: 40px;
@@ -963,12 +991,12 @@ button {
 }
 
 .c-layout__footer {
-    grid-area: footer;
+    visibility: hidden;
     display: flex;
     flex-direction: column;
+    grid-area: footer;
     justify-content: space-between;
     gap: 20px;
-    visibility: hidden;
     transition: visibility var(--delay) var(--delay);
 
     @media (min-width: 1280px) {
@@ -982,18 +1010,18 @@ button {
 
 .c-layout__footer-item {
     position: relative;
-    padding: 16px 30px 16px 16px;
     translate: -150px;
     transition: translate var(--delay);
+    padding: 16px 30px 16px 16px;
 
     &::before,
     &::after {
         content: "";
-        z-index: -1;
         position: absolute;
+        z-index: -1;
         inset: 0;
-        background-color: var(--shadow-bg);
         clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 100%, 0 100%);
+        background-color: var(--shadow-bg);
     }
 
     &::before {
@@ -1013,12 +1041,12 @@ button {
     }
 
     &.m-right {
-        margin-left: auto;
-        padding-right: 192px;
-        padding-left: 30px;
-        border-left: 20px solid transparent;
-        text-align: right;
         translate: 200px;
+        margin-left: auto;
+        border-left: 20px solid transparent;
+        padding-left: 30px;
+        padding-right: 192px;
+        text-align: right;
 
         &::before,
         &::after {
@@ -1031,18 +1059,18 @@ button {
 
         > img {
             position: absolute;
-            right: 0;
             bottom: 16px;
-            width: 191px;
-            height: 200px;
-            border: 12px solid var(--light-bg);
-            border-bottom: 0;
-            background: var(--light-bg);
-            text-align: center;
-            line-height: 200px;
+            right: 0;
             clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%);
             translate: 150px;
             transition: translate var(--delay);
+            border: 12px solid var(--light-bg);
+            border-bottom: 0;
+            width: 191px;
+            height: 200px;
+            background: var(--light-bg);
+            line-height: 200px;
+            text-align: center;
 
             &.m-in-viewport {
                 translate: 0;
